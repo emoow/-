@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f6f4ed" />
+  <meta name="description" content="住友——让合租的每一笔账、每一次值日、每一件公用品都有回应。" />
+  <title>住友 · 合租生活管家</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#home"><span class="brand-mark">住</span><span>住友<small>ROOMIE</small></span></a>
+      <nav aria-label="主导航">
+        <button class="nav-item active" data-view="home"><span>⌂</span>今日</button>
+        <button class="nav-item" data-view="bills"><span>¥</span>费用</button>
+        <button class="nav-item" data-view="chores"><span>✓</span>值日</button>
+        <button class="nav-item" data-view="supplies"><span>□</span>物品</button>
+        <button class="nav-item" data-view="rules"><span>§</span>公约</button>
+      </nav>
+      <div class="home-card"><div class="home-icon">🏠</div><b>梧桐小屋</b><span>入住第 186 天</span><div class="avatars"><i>林</i><i>周</i><i>陈</i><i>许</i></div></div>
+      <button class="profile"><span class="avatar me">林</span><span><b>林默</b><small>家庭管理员</small></span><span class="dots">•••</span></button>
+    </aside>
+
+    <main>
+      <header class="topbar"><button class="menu" aria-label="打开菜单">☰</button><div class="mobile-brand">住友</div><button class="notification" aria-label="通知">♢<i></i></button><button class="invite">＋ 邀请室友</button></header>
+
+      <section id="home" class="view active">
+        <div class="welcome"><div><p class="eyebrow">10月7日 · 周三</p><h1>晚上好，林默</h1><p>小屋运转良好，还有 <b>2 件事</b> 等你处理。</p></div><div class="weather"><span>☀</span><b>24°</b><small>适合开窗通风</small></div></div>
+        <div class="snapshot">
+          <article class="balance-card"><div class="card-label"><span>本月待结清</span><button aria-label="显示金额">◉</button></div><div class="money"><small>¥</small>286.40</div><div class="balance-detail"><div><span>你需支付</span><b>¥326.40</b></div><div><span>你将收回</span><b class="green">¥40.00</b></div></div><button class="primary" data-open-modal="settle">去结清 <span>→</span></button></article>
+          <article class="next-card"><div class="card-head"><span class="icon-box mint">✓</span><div><small>下一项值日</small><h3>厨房深度清洁</h3></div><span class="tag">明天</span></div><div class="assignee"><span class="avatar zhou">周</span><div><b>周屿负责</b><small>预计 30 分钟</small></div></div><div class="progress-label"><span>本周完成度</span><b>3 / 5</b></div><div class="progress"><i style="width:60%"></i></div><button class="text-btn" data-view-jump="chores">查看排班 →</button></article>
+          <article class="supply-card"><div class="card-head"><span class="icon-box coral">□</span><div><small>物品提醒</small><h3>有 3 件快用完了</h3></div></div><ul><li><span class="product-icon">🧻</span><div><b>卷纸</b><small>约剩 2 天</small></div><button class="mini-add" data-supply="卷纸">加入清单</button></li><li><span class="product-icon">🧴</span><div><b>洗洁精</b><small>余量 15%</small></div><button class="mini-add" data-supply="洗洁精">加入清单</button></li></ul><button class="text-btn" data-view-jump="supplies">查看全部 →</button></article>
+        </div>
+        <div class="section-title"><div><p class="eyebrow">HOUSE PULSE</p><h2>小屋动态</h2></div><button class="filter">全部动态⌄</button></div>
+        <div class="activity-list"><article><span class="activity-icon paid">¥</span><div><b>陈序记录了一笔电费</b><p>9月电费 ¥328.60，4 人均摊</p></div><time>18:32</time></article><article><span class="activity-icon done">✓</span><div><b>许棠完成了客厅清洁</b><p>地面、茶几和沙发已整理</p></div><time>昨天</time></article><article><span class="activity-icon vote">§</span><div><b>新公约等待确认</b><p>关于夜间安静时段 · 3/4 已同意</p></div><button class="outline" data-view-jump="rules">去确认</button></article></div>
+      </section>
+
+      <section id="bills" class="view inner-view"><div class="page-heading"><div><p class="eyebrow">SHARED BILLS</p><h1>费用账本</h1><p>每一笔都清楚，关系才能更轻松。</p></div><button class="primary compact" data-open-modal="bill">＋ 记一笔</button></div><div class="stats"><article><span>10月总支出</span><b>¥2,486.40</b><small class="up">较上月 ↓ 8%</small></article><article><span>待结算</span><b>4 笔</b><small>共 ¥1,145.60</small></article><article><span>已结清</span><b>12 笔</b><small class="green">结算率 75%</small></article></div><div class="panel"><div class="panel-head"><h3>本月明细</h3><div class="tabs"><button class="active">全部</button><button>待结算</button><button>已结清</button></div></div><div id="billList" class="bill-list"></div></div></section>
+
+      <section id="chores" class="view inner-view"><div class="page-heading"><div><p class="eyebrow">FAIR ROTATION</p><h1>值日排班</h1><p>公平轮换，有事提前换，不让家务变成人情债。</p></div><button class="primary compact" id="swapBtn">发起换班</button></div><div class="week-strip"><button>‹</button><div><small>周一</small><b>5</b></div><div><small>周二</small><b>6</b></div><div class="today"><small>今天</small><b>7</b></div><div><small>周四</small><b>8</b></div><div><small>周五</small><b>9</b></div><div><small>周六</small><b>10</b></div><div><small>周日</small><b>11</b></div><button>›</button></div><div class="chore-grid" id="choreGrid"></div></section>
+
+      <section id="supplies" class="view inner-view"><div class="page-heading"><div><p class="eyebrow">SHARED SUPPLIES</p><h1>公共物品</h1><p>谁买的、还剩多少、何时补货，一眼知道。</p></div><button class="primary compact" data-open-modal="supply">＋ 登记物品</button></div><div class="supply-summary"><div><span>采购清单</span><b id="shoppingCount">3</b><small>待购买</small></div><p>下一次集中采购：<b>本周六</b></p><button class="outline" id="copyList">复制清单</button></div><div id="supplyGrid" class="supplies-grid"></div></section>
+
+      <section id="rules" class="view inner-view"><div class="page-heading"><div><p class="eyebrow">OUR AGREEMENT</p><h1>室友公约</h1><p>规则不是束缚，是对彼此生活边界的尊重。</p></div><button class="primary compact" data-open-modal="rule">＋ 发起提案</button></div><div class="rule-banner"><span>🤝</span><div><b>共同制定，共同遵守</b><p>公约需全员确认后生效；任何人都可以随时发起修改。</p></div><strong>8 条生效中</strong></div><div id="rulesList" class="rules-list"></div></section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modal" aria-hidden="true"><div class="modal" role="dialog" aria-modal="true"><button class="close" aria-label="关闭">×</button><p class="eyebrow" id="modalEyebrow">QUICK ACTION</p><h2 id="modalTitle">记录一笔费用</h2><form id="quickForm"><label>事项名称<input id="formName" required placeholder="例如：10月燃气费"></label><label>金额 / 说明<input id="formDetail" required placeholder="输入金额或简短说明"></label><div class="split-row"><label>付款人<select><option>林默</option><option>周屿</option><option>陈序</option><option>许棠</option></select></label><label>分摊方式<select><option>4人均摊</option><option>按成员选择</option><option>按比例</option></select></label></div><button class="primary" type="submit">确认保存</button></form></div></div>
+  <div class="toast" id="toast">已更新</div>
+  <nav class="bottom-nav" aria-label="移动端导航"><button class="active" data-view="home">⌂<small>今日</small></button><button data-view="bills">¥<small>费用</small></button><button data-view="chores">✓<small>值日</small></button><button data-view="supplies">□<small>物品</small></button><button data-view="rules">§<small>公约</small></button></nav>
+  <script src="app.js"></script>
+</body>
+</html>
